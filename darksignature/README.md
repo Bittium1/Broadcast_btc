@@ -1,23 +1,19 @@
 # DarkSignature is a tool for creating fake signature values ​​in Bitcoin cryptocurrency
 
-
-
 <!-- wp:paragraph -->
-<p><a href="https://github.com/smartibase/Broadcast-Bitcoin-Transaction/blob/main/darksignature/README.md#darksignature-is-a-tool-for-creating-fake-signature-values-in-bitcoin-cryptocurrency"></a></p>
+[DarkSignature](https://github.com/smartibase/Broadcast-Bitcoin-Transaction/blob/main/darksignature/README.md#darksignature-is-a-tool-for-creating-fake-signature-values-in-bitcoin-cryptocurrency)
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>There are many tools available on the internet to create fake signature values ​​in Bitcoin cryptocurrency, one of them is&nbsp;<a href="https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature"><strong>DarkSignature</strong></a></p>
+There are many tools available on the internet to create fake signature values in Bitcoin cryptocurrency, one of them is [**DarkSignature**](https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature)
 <!-- /wp:paragraph -->
 
 <!-- wp:quote -->
-<blockquote class="wp-block-quote"><!-- wp:paragraph -->
-<p><em>The basic idea behind&nbsp;<a href="https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature"><strong>DarkSignature</strong></a>&nbsp;is that if there are vulnerabilities in cryptographic algorithms such as ECDSA (Elliptic Curve Digital Signature Algorithm), it is possible to generate invalid or fake signatures that will be accepted as valid by the system.</em></p>
-<!-- /wp:paragraph --></blockquote>
+> *The basic idea behind [**DarkSignature**](https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature) is that if there are vulnerabilities in cryptographic algorithms such as ECDSA (Elliptic Curve Digital Signature Algorithm), it is possible to generate invalid or fake signatures that will be accepted as valid by the system.*
 <!-- /wp:quote -->
 
 <!-- wp:separator -->
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
+```markdown
 <!-- /wp:separator -->
 
 <!-- wp:image {"linkDestination":"custom"} -->
@@ -72,7 +68,7 @@ ls</code></pre>
 <!-- /wp:code -->
 
 <!-- wp:image {"linkDestination":"custom"} -->
-<figure class="wp-block-image"><a href="https://camo.githubusercontent.com/b50490d804a71779e544cb6eb9efb346bbda3f49baff85459511be9c500bbb15/68747470733a2f2f706f6c796e6f6e63652e72752f77702d636f6e74656e742f75706c6f6164732f323032342f31312f696d6167652d332d313032347838332e706e67" target="_blank" rel="noreferrer noopener"><img src="https://camo.githubusercontent.com/b50490d804a71779e544cb6eb9efb346bbda3f49baff85459511be9c500bbb15/68747470733a2f2f706f6c796e6f6e63652e72752f77702d636f6e74656e742f75706c6f6164732f323032342f31312f696d6167652d332d313032347838332e706e67" alt="DarkSignature is a tool for creating fake signature values ​​in Bitcoin cryptocurrency"/></a></figure>
+[![DarkSignature is a tool for creating fake signature values ​​in Bitcoin cryptocurrency](https://camo.githubusercontent.com/b50490d804a71779e544cb6eb9efb346bbda3f49baff85459511be9c500bbb15/68747470733a2f2f706f6c796e6f6e63652e72752f77702d636f6e74656e742f75706c6f6164732f323032342f31312f696d6167652d332d313032347838332e706e67)](https://camo.githubusercontent.com/b50490d804a71779e544cb6eb9efb346bbda3f49baff85459511be9c500bbb15/68747470733a2f2f706f6c796e6f6e63652e72752f77702d636f6e74656e742f75706c6f6164732f323032342f31312f696d6167652d332d313032347838332e706e67)
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -80,7 +76,7 @@ ls</code></pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><a href="https://github.com/smartibase/Broadcast-Bitcoin-Transaction/blob/main/darksignature/README.md#result"></a></p>
+[Result](https://github.com/smartibase/Broadcast-Bitcoin-Transaction/blob/main/darksignature/README.md#result)
 <!-- /wp:paragraph -->
 
 <!-- wp:code -->
@@ -112,38 +108,38 @@ ls</code></pre>
 <!-- /wp:paragraph -->
 
 <!-- wp:code -->
-<pre class="wp-block-code"><code>from ecdsa import VerifyingKey, SECP256k1 
-import binascii 
+<pre class="wp-block-code"><code>from ecdsa import VerifyingKey, SECP256k1
+import binascii
 
-def get_coordinates_from_pubkey(pubkey_hex): 
-    # Convert HEX to bytes 
-    pubkey_bytes = binascii.unhexlify(pubkey_hex) 
-    
-    # Create a VerifyingKey object from the public key 
-    vk = VerifyingKey.from_string(pubkey_bytes, curve=SECP256k1) 
-    
-    # Get the Gx and Gy coordinates 
-    Gx = vk.pubkey.point.x() 
-    Gy = vk.pubkey.point.y() 
-    
-    # Convert the coordinates to HEX format 
-    Gx_hex = format(Gx, 'x').zfill(64) # Fill with zeros up to 64 characters 
-    Gy_hex = format(Gy, 'x').zfill(64) # Fill with zeros up to 64 characters 
-    
-    return Gx_hex, Gy_hex 
+def get_coordinates_from_pubkey(pubkey_hex):
+    # Convert HEX to bytes
+    pubkey_bytes = binascii.unhexlify(pubkey_hex)
 
-pubkeyhex = "04ca5606a1e820e7a2f6bb3ab090e8ade7b04a7e0b5909a68dda2744ae3b8ecbfa280a47639c811134d648e8ee8096c33b41611be509ebca837fbda10baaa1eb15" 
+    # Create a VerifyingKey object from the public key
+    vk = VerifyingKey.from_string(pubkey_bytes, curve=SECP256k1)
 
-Gx, Gy = get_coordinates_from_pubkey(pubkeyhex) 
+    # Get the Gx and Gy coordinates
+    Gx = vk.pubkey.point.x()
+    Gy = vk.pubkey.point.y()
 
-print(f"pubkey: {pubkeyhex}") 
-print(f"") 
+    # Convert the coordinates to HEX format
+    Gx_hex = format(Gx, 'x').zfill(64) # Fill with zeros up to 64 characters
+    Gy_hex = format(Gy, 'x').zfill(64) # Fill with zeros up to 64 characters
+
+    return Gx_hex, Gy_hex
+
+pubkeyhex = "04ca5606a1e820e7a2f6bb3ab090e8ade7b04a7e0b5909a68dda2744ae3b8ecbfa280a47639c811134d648e8ee8096c33b41611be509ebca837fbda10baaa1eb15"
+
+Gx, Gy = get_coordinates_from_pubkey(pubkeyhex)
+
+print(f"pubkey: {pubkeyhex}")
+print(f"")
 print(f"(Gx, Gy) = {Gx} {Gy}")
 </code></pre>
 <!-- /wp:code -->
 
 <!-- wp:image {"linkDestination":"custom"} -->
-<figure class="wp-block-image"><a href="https://camo.githubusercontent.com/52ca28ba7e0de6d044eaf51a694c0bf4ecd313715fd4e36b296b4efa6335f191/68747470733a2f2f706f6c796e6f6e63652e72752f77702d636f6e74656e742f75706c6f6164732f323032342f31312f696d6167652d352d31303234783436362e706e67" target="_blank" rel="noreferrer noopener"><img src="https://camo.githubusercontent.com/52ca28ba7e0de6d044eaf51a694c0bf4ecd313715fd4e36b296b4efa6335f191/68747470733a2f2f706f6c796e6f6e63652e72752f77702d636f6e74656e742f75706c6f6164732f323032342f31312f696d6167652d352d31303234783436362e706e67" alt="DarkSignature is a tool for creating fake signature values ​​in Bitcoin cryptocurrency"/></a></figure>
+[![DarkSignature is a tool for creating fake signature values ​​in Bitcoin cryptocurrency](https://camo.githubusercontent.com/52ca28ba7e0de6d044eaf51a694c0bf4ecd313715fd4e36b296b4efa6335f191/68747470733a2f2f706f6c796e6f6e63652e72752f77702d636f6e74656e742f75706c6f6164732f323032342f31312f696d6167652d352d31303234783436362e706e67)](https://camo.githubusercontent.com/52ca28ba7e0de6d044eaf51a694c0bf4ecd313715fd4e36b296b4efa6335f191/68747470733a2f2f706f6c796e6f6e63652e72752f77702d636f6e74656e742f75706c6f6164732f323032342f31312f696d6167652d352d31303234783436362e706e67)
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -316,7 +312,7 @@ Signatere R value:  dc2e5e1104d74ace769d2c51901b6a6237c723a56aa4a295ea37ad826d0d
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
-<p><a href="https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature"><strong>The DarkSignature</strong></a>&nbsp;tool&nbsp;is a powerful tool for creating fake signature values ​​in the Bitcoin cryptocurrency by exploiting vulnerabilities in cryptographic algorithms such as ECDSA.&nbsp;<strong>DarkSignature</strong>&nbsp;can generate invalid signatures that can be accepted as valid by the system, posing serious threats to user security and network integrity. When using&nbsp;<a href="https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature"><strong>DarkSignature,</strong></a>&nbsp;users can modify directories, install necessary libraries, and extract public key coordinates, allowing them to manipulate digital signatures. These actions highlight the importance of carefully checking and protecting the cryptographic mechanisms used in Bitcoin and other cryptocurrencies. Understanding how tools like&nbsp;<a href="https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature"><strong>DarkSignature</strong></a>&nbsp;work helps raise awareness of potential risks and vulnerabilities in the system, which is essential for ensuring security in the world of digital currencies.</p>
+[**The DarkSignature**](https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature) tool is a powerful tool for creating fake signature values ​​in the Bitcoin cryptocurrency by exploiting vulnerabilities in cryptographic algorithms such as ECDSA. **DarkSignature** can generate invalid signatures that can be accepted as valid by the system, posing serious threats to user security and network integrity. When using [**DarkSignature**](https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature), users can modify directories, install necessary libraries, and extract public key coordinates, allowing them to manipulate digital signatures. These actions highlight the importance of carefully checking and protecting the cryptographic mechanisms used in Bitcoin and other cryptocurrencies. Understanding how tools like [**DarkSignature**](https://github.com/smartibase/Broadcast-Bitcoin-Transaction/tree/main/darksignature) work helps raise awareness of potential risks and vulnerabilities in the system, which is essential for ensuring security in the world of digital currencies.
 <!-- /wp:paragraph -->
 
 <!-- wp:separator -->
@@ -328,3 +324,6 @@ Signatere R value:  dc2e5e1104d74ace769d2c51901b6a6237c723a56aa4a295ea37ad826d0d
 <!-- /wp:paragraph -->
 
 ---
+
+
+[def]: https://github.com/smartibase/Broadcast-Bitcoin-Transaction/blob/main/darksignature/README.md#darksignature-is-a-tool-for-creating-fake-signature-values-in-bitcoin-cryptocurrency

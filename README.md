@@ -3,33 +3,19 @@
 ---
 
 <!-- wp:paragraph -->
-<p>Broadcast Bitcoin Transaction is the process by which a created transaction is sent to the Bitcoin network for verification and confirmation.</p>
+Broadcast Bitcoin Transaction is the process by which a created transaction is sent to the Bitcoin network for verification and confirmation.
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul class="wp-block-list"><!-- wp:list-item -->
-<li><strong>Creating a transaction</strong> : When you want to send Bitcoin to another user, you create a transaction. This involves specifying the recipient's address, the amount, and signing it using your private key.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><strong>Broadcast to the network</strong> : Once a transaction has been created, it must be “broadcast” to the Bitcoin network. This means that the transaction data is sent to one or more nodes – computers that support the Bitcoin network and store the full history of all transactions.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><strong>Verification by nodes</strong> : When a node receives your transaction, it checks to see if it is well-formed and complies with the rules of the Bitcoin network. If everything is OK, the node forwards the transaction to other nodes.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><strong>Waiting for confirmation</strong> : After a transaction has been propagated through the network, it goes into a “transaction pool” (mempool) where it waits for confirmation. Miners select transactions from this pool to add to blocks.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><strong>Confirmation</strong> : Once a miner successfully adds your transaction to a new block, it is considered confirmed and becomes part of the blockchain, the public ledger of all Bitcoin transactions.</li>
-<!-- /wp:list-item --></ul>
+- **Creating a transaction**: When you want to send Bitcoin to another user, you create a transaction. This involves specifying the recipient's address, the amount, and signing it using your private key.
+- **Broadcast to the network**: Once a transaction has been created, it must be “broadcast” to the Bitcoin network. This means that the transaction data is sent to one or more nodes – computers that support the Bitcoin network and store the full history of all transactions.
+- **Verification by nodes**: When a node receives your transaction, it checks to see if it is well-formed and complies with the rules of the Bitcoin network. If everything is OK, the node forwards the transaction to other nodes.
+- **Waiting for confirmation**: After a transaction has been propagated through the network, it goes into a “transaction pool” (mempool) where it waits for confirmation. Miners select transactions from this pool to add to blocks.
+- **Confirmation**: Once a miner successfully adds your transaction to a new block, it is considered confirmed and becomes part of the blockchain, the public ledger of all Bitcoin transactions.
 <!-- /wp:list -->
 
 <!-- wp:separator -->
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
+```markdown
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
@@ -43,7 +29,6 @@
 <!-- wp:separator -->
 <hr class="wp-block-separator has-alpha-channel-opacity"/>
 <!-- /wp:separator -->
-
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Clone the repository:</h3>
@@ -150,8 +135,6 @@ https:&#47;&#47;broad-casts.ru
 
 --------------------------------------</code></pre>
 <!-- /wp:code -->
-
-
 
 <!-- wp:paragraph -->
 <p>Once the transaction is created, it needs to be broadcasted to the Bitcoin network. This is done by sending the transaction data to one or more Bitcoin nodes. A node is a computer running the Bitcoin software that maintains a copy of the entire Bitcoin blockchain and communicates with other nodes to relay transactions and blocks.</p>
