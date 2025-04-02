@@ -1,4 +1,4 @@
-# pip install ecdsa 
+# pip install ecdsa
 
 from ecdsa import VerifyingKey, SECP256k1 
 import binascii 
