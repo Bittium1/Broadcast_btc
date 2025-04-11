@@ -1,0 +1,7 @@
+{
+    "htmlhint.documentSelector": [
+        "allowedLinkSchemes",
+        "html",
+        "htm"
+    ]
+}
